@@ -161,7 +161,7 @@ class ApiHelper
 			$pagination = array(
 				'total_record'	=>	0,
 				'page'			=>	1,
-				'pagesize'		=>	self::$pagesize,
+				'pagesize'		=>	$pagesize > 0 ? $pagesize : self::$pagesize,
 				'count'			=>	0,
 				'page_count'	=>	0,
 				'more'			=>	0,
