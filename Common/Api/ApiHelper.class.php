@@ -85,6 +85,9 @@ class ApiHelper
 			$errorMessage = trim($errorMessage) ? $errorMessage : (isset(self::$errorCodeList[$errorCode]) ? self::$errorCodeList[$errorCode] : $errorCode); //没有传入错误描述时输出错误码
 			$errorCode = intval($errorCode);
 			$return['code'] = $errorCode;
+			if($errorCode === 0){
+				$errorCode = -1;
+			}
 			$return['message'] = $errorMessage;
 			$return['data'] = array();
 		}elseif(is_array($errorCode)){
